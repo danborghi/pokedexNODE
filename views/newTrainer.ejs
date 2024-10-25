@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Treinador</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cadastrar Novo Treinador</h1>
+    </header>
+    <main>
+        <form action="/trainers" method="POST">
+            <label for="nome">Nome do Treinador:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="pokemons">Selecione os Pokémons:</label>
+            <select id="pokemons" name="pokemons" multiple required>
+                <% pokemons.forEach(function(pokemon) { %>
+                    <option value="<%= pokemon.id %>"><%= pokemon.nome %></option>
+                <% }); %>
+            </select>
+
+            <button type="submit">Cadastrar Treinador</button>
+        </form>
+    </main>
+</body>
+</html>

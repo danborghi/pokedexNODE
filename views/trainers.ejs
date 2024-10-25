@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Treinadores</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Lista de Treinadores</h1>
+    </header>
+    <main>
+        <ul>
+            <% trainers.forEach(function(trainer) { %>
+                <li>
+                    <h2><%= trainer.nome %></h2>
+                    <p>Pokémons:</p>
+                    <ul>
+                        <% trainer.pokemons.forEach(function(pokemonId) { 
+                            const pokemon = pokemons.find(p => p.id === pokemonId); %>
+                            <li><%= pokemon.nome %> - <%= pokemon.tipo %></li>
+                        <% }); %>
+                    </ul>
+                </li>
+            <% }); %>
+        </ul>
+    </main>
+</body>
+</html>
