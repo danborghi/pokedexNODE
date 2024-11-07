@@ -12,14 +12,13 @@
         <h1>Lista de Treinadores</h1>
     </header>
     <main>
-        <ul>
+        <ul class="trainer-list">
             <% trainers.forEach(function(trainer) { %>
-                <li>
+                <li class="trainer-item">
                     <h2><%= trainer.nome %></h2>
                     <p>Pokémons:</p>
                     <ul>
-                        <% trainer.pokemons.forEach(function(pokemonId) { 
-                            const pokemon = pokemons.find(p => p.id === pokemonId); %>
+                        <% trainer.pokemons.forEach(function(pokemon) { %>
                             <li><%= pokemon.nome %> - <%= pokemon.tipo %></li>
                         <% }); %>
                     </ul>

@@ -6,7 +6,7 @@ const createTrainer = (nome, pokemons) => {
     const newTrainer = {
         id: trainers.length + 1,
         nome,
-        pokemons: pokemons.map(pokemonId => parseInt(pokemonId)) // Armazena IDs dos Pokémons
+        pokemons // Armazena os IDs diretamente, sem transformar
     };
     trainers.push(newTrainer);
     return newTrainer;
